@@ -101,13 +101,15 @@ const RepositoryPage = () => {
 
   const handleConnect = (repo: Repository) => {
     setLocalConnectingId(repo.id);
-    connectRepo({
-      owner: repo.full_name.split("/")[0],
-      repo: repo.name,
-      githubId: repo.id},
+    connectRepo(
       {
-        onSettled: ()=>setLocalConnectingId(null)
-      }
+        owner: repo.full_name.split("/")[0],
+        repo: repo.name,
+        githubId: repo.id,
+      },
+      {
+        onSettled: () => setLocalConnectingId(null),
+      },
     );
   };
 
@@ -148,7 +150,11 @@ const RepositoryPage = () => {
                   <CardDescription>{repo.description}</CardDescription>
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="ghost" size="icon">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="cursor-pointer"
+                  >
                     <a
                       href={repo.html_url}
                       target="_blank"
@@ -158,6 +164,7 @@ const RepositoryPage = () => {
                     </a>
                   </Button>
                   <Button
+                  className="cursor-pointer"
                     onClick={() => handleConnect(repo)}
                     disabled={localConnectingId === repo.id || repo.isConnected}
                     variant={repo.isConnected ? "outline" : "default"}
