@@ -13,7 +13,7 @@ export const fetchRepositories = async (
     headers: await headers(),
   });
 
-  if (!session) {
+  if (!session?.user) {
     throw new Error("Unauthorized");
   }
 
@@ -42,7 +42,7 @@ export const connectRepository = async (
     headers: await headers(),
   });
 
-  if (!session) throw new Error("Unauthorized");
+  if (!session?.user) throw new Error("Unauthorized");
 
   // TODO: CHECK IF USER CAN CONNECT MORE REPO
 
