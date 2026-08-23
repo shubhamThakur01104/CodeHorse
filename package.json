@@ -6,14 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "inngest": "inngest-cli dev"
   },
   "dependencies": {
+    "@ai-sdk/google": "^4.0.50",
     "@base-ui/react": "^1.6.0",
+    "@pinecone-database/pinecone": "^8.2.0",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
     "@shadcn/react": "^0.2.1",
     "@tanstack/react-query": "^5.101.4",
+    "ai": "^7.0.77",
     "better-auth": "^1.6.26",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -21,6 +25,7 @@
     "date-fns": "^4.4.0",
     "dotenv": "^17.4.2",
     "embla-carousel-react": "^8.6.0",
+    "inngest": "^4.18.1",
     "input-otp": "^1.4.2",
     "lucide-react": "^1.28.0",
     "next": "^16.3.0",
@@ -47,9 +52,18 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
-    "prisma": "^7.9.1",
+    "inngest-cli": "^1.43.0",
+    "prisma": "^6.12.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.11",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "inngest-cli": true,
+    "prisma": true,
+    "@prisma/engines": true,
+    "esbuild": true,
+    "protobufjs": true,
+    "unrs-resolver": true
   }
 }
