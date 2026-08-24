@@ -1,0 +1,30 @@
+{
+  "name": "codehorse",
+  "private": true,
+  "packageManager": "npm@10.9.0",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/server.mjs",
+    "composer:deploy": "npx --yes prisma@next composer deploy module.ts",
+    "composer:destroy": "npx --yes prisma@next composer destroy module.ts --production",
+    "composer:dev": "npx --yes prisma@next composer dev module.ts",
+    "deploy": "npm run build && npm run composer:deploy",
+    "dev": "tsx watch src/index.ts",
+    "dev:composer": "npm run build && npm run composer:dev",
+    "start": "node dist/server.mjs"
+  },
+  "dependencies": {
+    "@prisma/composer": "0.10.0",
+    "@prisma/composer-prisma-cloud": "0.10.0",
+    "alchemy": "2.0.0-beta.67"
+  },
+  "devDependencies": {
+    "@prisma/cli-engine": "0.2.0",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "effect": "4.0.0-beta.103"
+  }
+}
