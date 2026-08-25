@@ -102,7 +102,7 @@ export const generateReview = inngest.createFunction(
             repositoryId: repository.id,
             prNumber,
             prTitle: title,
-            prUrl: `https://github.con/${owner}/${repo}/pull/${prNumber}`,
+            prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`,
             review,
             status: "completed",
           },
