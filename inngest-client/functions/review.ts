@@ -77,7 +77,7 @@ export const generateReview = inngest.createFunction(
       `;
 
       const { text } = await generateText({
-        model: google("gemini-2.5-flash"),
+        model: google("gemini-3.6-flash"),
         prompt,
       });
 
@@ -102,7 +102,7 @@ export const generateReview = inngest.createFunction(
             repositoryId: repository.id,
             prNumber,
             prTitle: title,
-            prUrl: `https://github.con/${owner}/${repo}/pull/${prNumber}`,
+            prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`,
             review,
             status: "completed",
           },
