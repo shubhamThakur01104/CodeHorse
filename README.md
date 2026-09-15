@@ -54,7 +54,7 @@ flowchart TD
     end
 
     subgraph CodeHorse [CodeHorse Platform (Next.js)]
-        Webhook[/api/webhooks/github] -->|Triggers Event| Inngest[Inngest Background Job]
+        Webhook["/api/webhooks/github"] -->|Triggers Event| Inngest[Inngest Background Job]
         Dashboard[Next.js Dashboard] -->|User Actions| DB[(PostgreSQL + Prisma)]
     end
 
